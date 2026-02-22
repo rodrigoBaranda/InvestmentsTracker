@@ -1,0 +1,14 @@
+[project]
+name = "investmentstracker"
+version = "0.1.0"
+description = "A private dashboard to monitor investment performance"
+requires-python = ">=3.11"
+dependencies = [
+    "psycopg[binary]>=3.3.3",
+    "python-dotenv>=1.2.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
