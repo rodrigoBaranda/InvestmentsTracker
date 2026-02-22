@@ -4,7 +4,7 @@ import os
 import sys
 
 from dotenv import load_dotenv
-import psycopg2
+import psycopg
 
 load_dotenv()
 
@@ -17,23 +17,20 @@ if not DATABASE_URL:
 print("Connecting to database...")
 
 try:
-    conn = psycopg2.connect(DATABASE_URL)
-    cursor = conn.cursor()
+    with psycopg.connect(DATABASE_URL) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT version();")
+            version = cursor.fetchone()[0]
+            print("Connection successful!")
+            print(f"PostgreSQL version: {version}")
 
-    cursor.execute("SELECT version();")
-    version = cursor.fetchone()[0]
-    print(f"Connection successful!")
-    print(f"PostgreSQL version: {version}")
+            cursor.execute("SELECT current_database(), current_user;")
+            db, user = cursor.fetchone()
+            print(f"Database: {db}")
+            print(f"User: {user}")
 
-    cursor.execute("SELECT current_database(), current_user;")
-    db, user = cursor.fetchone()
-    print(f"Database: {db}")
-    print(f"User: {user}")
-
-    cursor.close()
-    conn.close()
     print("\nConnection closed cleanly.")
 
-except psycopg2.OperationalError as e:
+except psycopg.OperationalError as e:
     print(f"ERROR: Could not connect to the database.\n{e}")
     sys.exit(1)

@@ -20,3 +20,11 @@ The project follows a client-server architecture:
 ## Development Setup
 
 Dependencies are managed with [uv](https://docs.astral.sh/uv/). Environment variables (e.g. `DATABASE_URL`) go in `.env` — see `.env.example` for the expected keys.
+
+## Testing
+
+Every function must have a corresponding unit test. Tests live in a `tests/` directory mirroring the source structure and are run with:
+
+```bash
+uv run pytest
+```
