@@ -1,11 +1,8 @@
 import { useState } from 'react';
+import { today, validate } from '../utils/tradeForm';
 import './TradeEntryForm.css';
 
 const CURRENCIES = ['EUR', 'USD', 'GBP', 'CHF', 'JPY', 'CAD', 'AUD', 'SEK', 'NOK', 'DKK'];
-
-function today() {
-  return new Date().toISOString().split('T')[0];
-}
 
 export default function TradeEntryForm() {
   const [formData, setFormData] = useState({
@@ -28,14 +25,6 @@ export default function TradeEntryForm() {
 
   function handleTickerBlur() {
     setFormData(prev => ({ ...prev, ticker: prev.ticker.toUpperCase().trim() }));
-  }
-
-  function validate(data) {
-    const errs = {};
-    if (!data.ticker.trim()) {
-      errs.ticker = 'Ticker is required.';
-    }
-    return errs;
   }
 
   function handleSubmit(e) {

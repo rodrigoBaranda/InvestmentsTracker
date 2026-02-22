@@ -32,8 +32,14 @@ Dependencies are managed with [uv](https://docs.astral.sh/uv/). Environment vari
 
 ## Testing
 
-Every function must have a corresponding unit test. Tests live in a `tests/` directory mirroring the source structure and are run with:
+Every function must have a corresponding unit test.
 
+**Backend** — tests live in `tests/` mirroring the source structure:
 ```bash
 uv run pytest
+```
+
+**Frontend** — tests live alongside source files as `*.test.js`, run with:
+```bash
+cd frontend && npm test
 ```
