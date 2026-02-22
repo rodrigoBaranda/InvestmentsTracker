@@ -1,0 +1,39 @@
+/* ─── Design Tokens ──────────────────────────────────── */
+:root {
+  --color-accent:   #E3120B;
+  --color-bg:       #ffffff;
+  --color-text:     #111111;
+  --color-muted:    #555555;
+  --color-border:   #cccccc;
+  --color-input-bg: #f9f9f9;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  --max-width: 640px;
+}
+
+/* ─── Reset ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}

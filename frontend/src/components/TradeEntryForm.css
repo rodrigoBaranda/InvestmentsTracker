@@ -1,0 +1,145 @@
+/* ─── Wrapper & Header ─────────────────────────────────── */
+.trade-form-wrapper {
+  max-width: var(--max-width);
+  margin: var(--space-xl) auto;
+  padding: 0 var(--space-lg);
+}
+
+.trade-form-header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+/* ─── Dividers ─────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 2px solid var(--color-text);
+  margin: var(--space-md) 0 var(--space-lg);
+}
+
+.divider--form-end {
+  border-top-width: 1px;
+  border-color: var(--color-border);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+/* ─── Field groups ─────────────────────────────────────── */
+.trade-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.field-row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-end;
+}
+
+.field-group--grow {
+  flex: 1;
+}
+
+/* ─── Labels ────────────────────────────────────────────── */
+.field-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+/* ─── Inputs & Select ───────────────────────────────────── */
+.field-group input,
+.field-group select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  padding: 0.55rem 0.65rem;
+  width: 100%;
+  transition: border-color 0.15s ease;
+  appearance: auto;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+  outline: none;
+  border-color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ─── Error state ───────────────────────────────────────── */
+.field-group--error input {
+  border-color: var(--color-accent);
+}
+
+.field-error {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  margin-top: var(--space-xs);
+}
+
+.required-mark {
+  color: var(--color-accent);
+  margin-left: 2px;
+}
+
+/* ─── Submit Button ─────────────────────────────────────── */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-submit {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 2px;
+  padding: 0.65rem 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn-submit:hover {
+  opacity: 0.88;
+}
+
+.btn-submit:active {
+  opacity: 0.75;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .trade-form-wrapper {
+    margin: var(--space-lg) auto;
+    padding: 0 var(--space-md);
+  }
+
+  .trade-form-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .field-row {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+}
